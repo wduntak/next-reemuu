@@ -132,6 +132,22 @@ a:focus {
 	transition-delay: 0.7s;
 }
 
+.global-menu__item:nth-of-type(5) {
+	transition-delay: 0.2s;
+}
+
+.global-menu__item.is-opened:nth-of-type(5) {
+	transition-delay: 0.8s;
+}
+
+.global-menu__item:nth-of-type(6) {
+	transition-delay: 0.25s;
+}
+
+.global-menu__item.is-opened:nth-of-type(6) {
+	transition-delay: 0.85s;
+}
+
 /* demo 6 */
 .global-menu__item--demo-6.is-opened {
 	transition-duration: 0.8s;
@@ -167,6 +183,22 @@ a:focus {
 
 .global-menu__item--demo-6.is-opened:nth-of-type(4) {
 	transition-delay: 1.3s;
+}
+
+.global-menu__item--demo-6:nth-of-type(5) {
+	transition-delay: 0.05s;
+}
+
+.global-menu__item--demo-6.is-opened:nth-of-type(5) {
+	transition-delay: 1.4s;
+}
+
+.global-menu__item--demo-6:nth-of-type(6) {
+	transition-delay: 0s;
+}
+
+.global-menu__item--demo-6.is-opened:nth-of-type(6) {
+	transition-delay: 1.5s;
 }
 
 .shape-overlays {
@@ -236,9 +268,10 @@ a:focus {
 	width: 64px;
 	height: 64px;
 	display: block;
-	position: relative;
+	/* position: relative; */
+	position: fixed;
 	cursor: pointer;
-	position: absolute;
+	/* position: absolute; */
 	top: 2.25em;
 	right: 2.25em;
 	z-index: 110;

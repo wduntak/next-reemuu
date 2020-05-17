@@ -3,7 +3,7 @@ import Navigation from './navigation'
 
 export default function Intro() {
   return (
-    <section className="absolute flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12 z-50 w-full">
+    <section className="absolute flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12 md:mt-8 z-50 w-full">
       {/* <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
         Blog.
       </h1> */}

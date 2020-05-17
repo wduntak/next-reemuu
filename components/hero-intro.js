@@ -209,7 +209,7 @@ export default class HeroIntro extends Component {
               }
 
               .content__img {
-                height: calc(100vh - 25rem);
+                height: calc(100vh - 40rem);
                 width: 90%;
                 max-width: calc(1000px - 11rem);
                 max-height: 600px;
@@ -323,7 +323,7 @@ export default class HeroIntro extends Component {
                 outline: none;
               }
 
-              @media screen and (min-width: 53em) {
+              @media screen and (min-width: 1024px) {
                 :root {
                   font-size: 16px;
                 }

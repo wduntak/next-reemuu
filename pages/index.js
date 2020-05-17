@@ -5,6 +5,7 @@ import HeroPost from '../components/hero-post'
 import HeroIntro from '../components/hero-intro'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
+import IntroSection from '../components/intro-section'
 import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 
@@ -15,11 +16,12 @@ export default function Index({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Reemuu Designs by {CMS_NAME}</title>
         </Head>
         <Container>
           <Intro />
           <HeroIntro />
+          <IntroSection />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -34,7 +36,7 @@ export default function Index({ allPosts }) {
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export async function getStaticProps({ preview = false }) {
