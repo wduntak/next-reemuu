@@ -166,7 +166,7 @@ export default class HeroIntro extends Component {
             </div>
             <nav className="content__nav">
               <button className="content__nav-button content__nav-button--prev">
-                Prev
+                Previous
               </button>
               <button className="content__nav-button content__nav-button--next">
                 Next
@@ -178,7 +178,7 @@ export default class HeroIntro extends Component {
                 grid-template-rows: 100%;
                 grid-template-columns: 100%;
                 grid-template-areas: "main";
-                height: calc(100vh - 19rem);
+                height: calc(100vh - 30rem);
                 width: 100%;
                 margin: 0 auto;
                 position: relative;
@@ -296,14 +296,15 @@ export default class HeroIntro extends Component {
               .content__nav {
                 grid-area: main;
                 justify-self: center;
-                align-self: end;
+                align-self: center;
+                padding-top: 22rem;
                 width: calc(90% - 1rem);
                 max-width: 1000px;
                 height: auto;
                 display: flex;
                 align-items: flex-end;
                 justify-content: center;
-                font-size: 1.25rem;
+                font-size: 1rem;
                 position: relative;
               }
 
@@ -323,12 +324,16 @@ export default class HeroIntro extends Component {
                 outline: none;
               }
 
+              .content__nav-button:first-child {
+                margin-right: 1rem;
+              }
+
               @media screen and (min-width: 1024px) {
                 :root {
                   font-size: 16px;
                 }
                 .content {
-                  height: 100vh;
+                  height: calc(100vh - 8rem);
                 }
                 .content__img {
                   width: calc(90% - 11rem);
@@ -345,9 +350,13 @@ export default class HeroIntro extends Component {
                 }
                 .content__nav {
                   align-self: center;
+                  padding-top: inherit;
                   flex-direction: column;
                   justify-content: flex-start;
-                  font-size: 1.75rem;
+                  font-size: 1rem;
+                }
+                .content__nav-button:first-child {
+                  margin-right: inherit;
                 }
               }
             `}</style>

@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import { motion } from 'framer-motion'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import MoreStories from '../../components/more-stories'
@@ -18,6 +19,29 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  let easing = [0.175, 0.85, 0.42, 0.96];
+
+  const imageVariants = {
+    exit: { y: 150, opacity: 0, transition: { duration: 0.5, ease: easing } },
+    enter: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: easing
+      }
+    }
+  };
+
+  const textVariants = {
+    exit: { y: 100, opacity: 0, transition: { duration: 0.5, ease: easing } },
+    enter: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 0.1, duration: 0.5, ease: easing }
+    }
+  };
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -33,13 +57,19 @@ export default function Post({ post, morePosts, preview }) {
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
+              <motion.div initial="exit" animate="enter" exit="exit">
+                <motion.div variants={imageVariants}>
+                  <PostHeader
+                    title={post.title}
+                    coverImage={post.coverImage}
+                    date={post.date}
+                    author={post.author}
+                  />
+                </motion.div>
+                <motion.div variant={textVariants}>
+                  <PostBody content={post.content} />
+                </motion.div>
+              </motion.div>
             </article>
             <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
